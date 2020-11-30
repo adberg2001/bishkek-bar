@@ -1,26 +1,43 @@
 .header
+  position: fixed
+  right: 0
+  left: 0
   display: flex
   justify-content: space-between
-  padding: 10px 20px 0
+  padding: 10px 20vh
+  &:before
+    content: ""
+    height: 68px
+    position: fixed
+    margin: -10px 0
+    right: 0
+    left: 0
+    z-index: 0
+    transition: .3s ease
   a
     display: flex
+    z-index: 1
     align-items: center
     .logo
       object-fit: contain
       height: 40px
-
   span
-    z-index: 9999
-    transition: ease
-  .open
+    background: #000
+    border-radius: 6px
     color: #fff
-    transform: translateX(-250px)
-  .close
-    transform: translateX(0)
+
   @media (max-width: 560px)
-    padding: 5px 10px 0
+    padding: 5px 5px
     a
       .logo
         height: 20px
     .open
-      transform: translateX(-200px)
+      transform: translateX(calc(-70vw + 5px))
+.black
+  &:before
+    background: #000
+    transform: translateY(0)
+.transparent
+  &:before
+    background: #000
+    transform: translateY(-68px)
