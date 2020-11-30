@@ -1,0 +1,26 @@
+.header
+  display: flex
+  justify-content: space-between
+  padding: 10px 20px 0
+  a
+    display: flex
+    align-items: center
+    .logo
+      object-fit: contain
+      height: 40px
+
+  span
+    z-index: 9999
+    transition: ease
+  .open
+    color: #fff
+    transform: translateX(-250px)
+  .close
+    transform: translateX(0)
+  @media (max-width: 560px)
+    padding: 5px 10px 0
+    a
+      .logo
+        height: 20px
+    .open
+      transform: translateX(-200px)
