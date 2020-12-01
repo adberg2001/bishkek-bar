@@ -1,0 +1,44 @@
+.mainCont
+  height: calc(25vh + 25vw)
+  display: grid
+  grid-template: 1fr / 1fr 1fr
+  grid-column-gap: 1vh
+  padding: 5vh 20vh
+  color: #ffffff
+  @media (max-width: 1260px)
+    padding: 1vh 5vh
+  @media (max-width: 560px)
+    height: calc(45vh + 25vw)
+    grid-template: 1fr 1fr / 1fr
+    padding: 5vh 1vh
+  .actionPart
+    width: 100%
+    align-items: start
+    display: flex
+    flex-direction: column
+    padding: 0 0 0 2vh
+    margin:  0 0 0 -2vh
+    h2
+      margin: 0
+      font-size: 4vh
+      color: #ff5100
+    input
+      font-size: 3vh
+      border: 1px solid #919191
+      border-radius: 2px
+      padding: 1vh
+
+
+  .departmentsCont
+    overflow: auto
+    padding: 1vh
+    p
+      width: 95%
+      font-size: 3vh
+      cursor: pointer
+      transition: .2s ease
+      @media (max-width: 560px)
+        font-size: 2vh
+        border-bottom: 1px solid #ff5100
+    p:hover
+      color: #ff5100

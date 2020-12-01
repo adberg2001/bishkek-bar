@@ -2,6 +2,7 @@ import React from "react";
 import style from "./style.module.sass"
 
 function Title(){
+
   return (
     <section className={style.mainCont}>
       <h1>

@@ -12,15 +12,15 @@ function Header({toggleDrawer, open}) {
   }, [])
 
   const handleScroll = () => setYOffSet(window.pageYOffset);
-  console.log(yOffSet)
+  const w = window.innerHeight
   return (
     <header className={`${style.header} ${yOffSet < 150 ? style.black : style.transparent}`}>
       <NavLink to="/">
         <img src={logo} className={style.logo} alt=""/>
       </NavLink>
-      <span>
-        <Hamburger toggled={open} size={25} toggle={toggleDrawer(!open)}/>
-      </span>
+      <div style={{transform: `scale(${(w * (w < 1000 ? 1 : .9)) / 1080})`}} className={style.burger}>
+        <Hamburger distance="sm" toggled={open} size={30} toggle={toggleDrawer(!open)}/>
+      </div>
     </header>
   )
 }

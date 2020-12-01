@@ -2,14 +2,17 @@
   position: fixed
   right: 0
   left: 0
+  top: 0
   display: flex
   justify-content: space-between
-  padding: 10px 20vh
+  align-items: center
+  padding: 1vh 20vh
+  z-index: 2
   &:before
     content: ""
-    height: 68px
+    height: 8vh
     position: fixed
-    margin: -10px 0
+    margin: -2vh 0
     right: 0
     left: 0
     z-index: 0
@@ -20,19 +23,29 @@
     align-items: center
     .logo
       object-fit: contain
-      height: 40px
-  span
+      height: 4vh
+  .burger
+    position: absolute
+    top: 1vh
+    right: 20vh
     background: #000
-    border-radius: 6px
+    border-radius: 2px
     color: #fff
-
+    transform-origin: right top
+    @media (min-width: 1660px)
+      top: 1.2vh
+    @media (max-width: 560px)
+      transform: scale(.5)
+  @media (max-width: 1260px)
+    padding: 1vh 5vh
+    .burger
+      right: 5vh
   @media (max-width: 560px)
-    padding: 5px 5px
-    a
-      .logo
-        height: 20px
+    padding: 1vh
+    .burger
+      right: 1vh
     .open
-      transform: translateX(calc(-70vw + 5px))
+      transform: translateX(calc(-70vw + 1vh))
 .black
   &:before
     background: #000
@@ -40,4 +53,4 @@
 .transparent
   &:before
     background: #000
-    transform: translateY(-68px)
+    transform: translateY(-8vh)
