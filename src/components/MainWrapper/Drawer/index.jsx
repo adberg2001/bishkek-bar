@@ -1,13 +1,9 @@
 import React from "react";
 import Drawer from '@material-ui/core/Drawer';
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import style from "./style.module.sass"
-import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
+import {NavLink} from "react-router-dom";
+import {Sling as Hamburger} from "hamburger-react";
 
 function DrawerComponent({toggleDrawer, open}){
 
@@ -17,27 +13,56 @@ function DrawerComponent({toggleDrawer, open}){
       onKeyDown={toggleDrawer(false)}
       className={style.mainCont}
     >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <ul>
+        <li>
+          <NavLink to="/">
+            Таб-бар
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/">
+            Офис-бар
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/">
+            Диско-бар
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/">
+            Лаунж-бар
+          </NavLink>
+        </li>
+      </ul>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <ul>
+        <li>
+          <NavLink to="/">
+            Реклама на сайте
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/">
+            Добавить заведение
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/">
+            Обратная свзяь
+          </NavLink>
+        </li>
+      </ul>
+      <span style={{transform: `scale(${(w * (w < 1000 ? 1 : .9)) / 1080})`}} className={style.hamburger}>
+        <Hamburger toggled={open} size={25} toggle={toggleDrawer(!open)}/>
+      </span>
     </div>
   );
+
+  const w = window.innerHeight
+
   return (
-    <Drawer anchor={"right"} open={open} onClose={toggleDrawer(false)}>
+    <Drawer transitionDuration={300} anchor={"right"} open={open} onClose={toggleDrawer(false)}>
       {list()}
     </Drawer>
   )

@@ -2,7 +2,7 @@ const initialState = {
     home: null
 }
 
-export default function homeReducer(state = initialState, action: { type: string; data: null | object; }) {
+export default function homeReducer(state = initialState, action) {
     switch (action.type) {
         case "HOME":
             return {

@@ -1,4 +1,35 @@
 .mainCont
-  width: 270px
+  width: 50vw
+  background: #000
+  height: 100%
+  display: flex
+  flex-direction: column
   @media (max-width: 560px)
-    width: 210px
+    width: 70vw
+
+  ul
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    list-style: none
+    text-align: center
+    padding: 0
+
+    li
+      font-weight: 700
+      letter-spacing: 2px
+      font-size: 3vh
+      padding: 2vh
+      transition: .3s ease
+      color: #fff
+    @media (max-width: 560px)
+      li
+        font-size: 2vh
+    li:hover
+      color: #ff6925
+      background: #260c00
+  .hamburger
+    position: absolute
+    top: 1vh
+    left: 0
+    color: #fff

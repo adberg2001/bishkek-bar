@@ -1,4 +1,4 @@
-export function homeAction(data: null | object){
+export function homeAction(data){
     return {
         type: "Home",
         data
