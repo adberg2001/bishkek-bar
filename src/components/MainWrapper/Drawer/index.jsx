@@ -15,44 +15,34 @@ function DrawerComponent({toggleDrawer, open}){
     >
       <ul>
         <li>
-          <NavLink to="/">
-            Таб-бар
+          <NavLink activeClassName={style.active} className={style.link} to="/" exact>
+            Главная
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">
-            Офис-бар
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/">
-            Диско-бар
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/">
-            Лаунж-бар
+          <NavLink activeClassName={style.active} className={style.link} to="/departments" exact>
+            Заведения
           </NavLink>
         </li>
       </ul>
-      <Divider />
-      <ul>
-        <li>
-          <NavLink to="/">
-            Реклама на сайте
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/">
-            Добавить заведение
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/">
-            Обратная свзяь
-          </NavLink>
-        </li>
-      </ul>
+      {/*<Divider />*/}
+      {/*<ul>*/}
+      {/*  <li>*/}
+      {/*    <NavLink to="/">*/}
+      {/*      Реклама на сайте*/}
+      {/*    </NavLink>*/}
+      {/*  </li>*/}
+      {/*  <li>*/}
+      {/*    <NavLink to="/">*/}
+      {/*      Добавить заведение*/}
+      {/*    </NavLink>*/}
+      {/*  </li>*/}
+      {/*  <li>*/}
+      {/*    <NavLink to="/">*/}
+      {/*      Обратная свзяь*/}
+      {/*    </NavLink>*/}
+      {/*  </li>*/}
+      {/*</ul>*/}
       <span style={{transform: `scale(${(w * (w < 1000 ? 1 : .9)) / 1080})`}} className={style.hamburger}>
         <Hamburger toggled={open} size={25} toggle={toggleDrawer(!open)}/>
       </span>

@@ -1,13 +1,16 @@
 import React from "react";
 import style from "./style.module.sass"
+import MainWrapper from "../MainWrapper";
 
-function Departments(){
+function DepartmentsComponent(){
 
   return (
-    <div className={style.mainCont}>
-
-    </div>
+    <MainWrapper>
+      <div className={style.mainCont}>
+        Departments
+      </div>
+    </MainWrapper>
   )
 }
 
-export default Departments;
+export default DepartmentsComponent;

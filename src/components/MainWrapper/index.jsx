@@ -1,17 +1,20 @@
-import React, {useState} from "react";
+import React from "react";
 import style from "./style.module.sass"
 import DrawerComponent from "./Drawer";
 import Header from "./Header";
+import {useDispatch, useSelector} from "react-redux";
+import {drawerAction} from "./Drawer/action";
 
 
 function MainWrapper({children}) {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  const open = useSelector(state => state.drawer.open)
 
-  const toggleDrawer = (open) => (event) => {
+  const toggleDrawer = () => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-    setOpen(open);
+    dispatch(drawerAction());
   };
 
   return (

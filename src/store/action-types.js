@@ -1,0 +1,1 @@
+export const SET_OPEN_DRAWER = "SET_OPEN_DRAWER";

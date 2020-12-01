@@ -16,18 +16,24 @@
     padding: 0
 
     li
-      font-weight: 700
-      letter-spacing: 2px
-      font-size: 3vh
-      padding: 2vh
       transition: .3s ease
-      color: #fff
-    @media (max-width: 560px)
-      li
-        font-size: 2vh
-    li:hover
-      color: #ff6925
-      background: #260c00
+      margin-bottom: 5px
+      .link
+        padding: 2vh
+        display: block
+        text-align: center
+        font-weight: 700
+        letter-spacing: 2px
+        font-size: 3vh
+        color: #fff
+        @media (max-width: 560px)
+          font-size: 2vh
+      .link:hover
+        background: #260c00
+        color: #ff6925
+      .active
+        background: #260c00
+        color: #ff6925
   .hamburger
     position: absolute
     top: 1vh
