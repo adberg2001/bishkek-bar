@@ -2,7 +2,7 @@
   color: #fff
   padding: 1vh 20vh
   display: grid
-  grid-row-gap: 2vh
+  grid-row-gap: 5vh
   @media (max-width: 1260px)
     padding: 1vh 5vh
   @media (max-width: 560px)
@@ -19,7 +19,7 @@
         align-items: flex-end
       img
         width: 100%
-        max-height: 400px
+        max-height: calc(20vh + 15vw)
         object-fit: cover
     .desc
       padding: 0 0 0 1vh
@@ -27,6 +27,9 @@
       flex-direction: column
       margin: calc(1vh + 1vw) 0
       border-right: 1vh solid #fff
+      @media(max-width: 560px)
+        border-right: none
+        border-bottom: 1vh solid #fff
       h2
         font-size: 5vh
         margin: 0

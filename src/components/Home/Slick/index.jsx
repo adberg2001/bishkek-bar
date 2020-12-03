@@ -28,13 +28,13 @@ export default class Slick extends Component {
       autoplaySpeed: 3000,
     };
     const photos = [
-      {id:1, img: img1},
-      {id:2, img: img2},
-      {id:3, img: img3},
-      {id:4, img: img4},
-      {id:5, img: img5}
+      {id:1, img: img1, link: ""},
+      {id:2, img: img2, link: ""},
+      {id:3, img: img3, link: ""},
+      {id:4, img: img4, link: ""},
+      {id:5, img: img5, link: ""}
     ]
-
+    console.log(typeof photos[0])
     return (
       <div className={style.mainCont}>
         <Slider
