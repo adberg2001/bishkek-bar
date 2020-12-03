@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import style from "./style.module.sass"
 import {NavLink} from "react-router-dom";
-import logo from "./assets/vigbarlogo.png"
+import logo from "./assets/TBB 1.svg"
 import {Sling as Hamburger} from 'hamburger-react'
 
 function Header({toggleDrawer, open}) {
@@ -15,7 +15,7 @@ function Header({toggleDrawer, open}) {
   const w = window.innerHeight
   return (
     <header className={`${style.header} ${yOffSet < 150 ? style.black : style.transparent}`}>
-      <NavLink to="/">
+      <NavLink to="/" exact>
         <img src={logo} className={style.logo} alt=""/>
       </NavLink>
       <div style={{transform: `scale(${(w * (w < 1000 ? 1 : .9)) / 1080})`}} className={style.burger}>

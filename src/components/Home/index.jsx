@@ -5,7 +5,6 @@ import Title from "./Title";
 import Slick from "./Slick";
 import HomeAction from "./Home-action";
 import Map from "./Map";
-import Footer from "./Footer";
 
 function HomeComponent() {
 
@@ -16,7 +15,6 @@ function HomeComponent() {
               <HomeAction/>
               <Slick/>
               <Map/>
-              <Footer/>
             </div>
         </MainWrapper>
     )

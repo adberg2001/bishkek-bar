@@ -4,6 +4,7 @@ import DrawerComponent from "./Drawer";
 import Header from "./Header";
 import {useDispatch, useSelector} from "react-redux";
 import {drawerAction} from "./Drawer/action";
+import Footer from "./Footer";
 
 
 function MainWrapper({children}) {
@@ -22,6 +23,7 @@ function MainWrapper({children}) {
       <Header toggleDrawer={toggleDrawer} open={open}/>
       {children}
       <DrawerComponent toggleDrawer={toggleDrawer} open={open}/>
+      <Footer/>
     </div>
   )
 }
