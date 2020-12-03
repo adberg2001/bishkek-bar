@@ -1,17 +1,15 @@
 import React from "react";
 import style from "./style.module.sass"
 import MainWrapper from "../../MainWrapper";
-import Departments from "./Departments";
 
-function DepartmentsComponent(){
-
+function DepartmentsCreateComponent(){
   return (
     <MainWrapper>
       <div className={style.mainCont}>
-        <Departments/>
+        <h2>Добавление заведения</h2>
       </div>
     </MainWrapper>
   )
 }
 
-export default DepartmentsComponent;
+export default DepartmentsCreateComponent;

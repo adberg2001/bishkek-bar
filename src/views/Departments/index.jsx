@@ -1,5 +1,5 @@
 import React from "react";
-import DepartmentsComponent from "../../components/Departments";
+import DepartmentsComponent from "../../components/Departments/Departments";
 
 function Departments() {
   return (

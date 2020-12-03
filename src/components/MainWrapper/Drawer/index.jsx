@@ -1,11 +1,10 @@
 import React from "react";
 import Drawer from '@material-ui/core/Drawer';
 import style from "./style.module.sass"
-import Divider from "@material-ui/core/Divider";
 import {NavLink} from "react-router-dom";
 import {Sling as Hamburger} from "hamburger-react";
 
-function DrawerComponent({toggleDrawer, open}){
+function DrawerComponent({toggleDrawer, open}) {
 
   const list = () => (
     <div
@@ -24,25 +23,12 @@ function DrawerComponent({toggleDrawer, open}){
             Заведения
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/departments/create" activeClassName={style.active} className={style.link}>
+            Добавить заведение
+          </NavLink>
+        </li>
       </ul>
-      {/*<Divider />*/}
-      {/*<ul>*/}
-      {/*  <li>*/}
-      {/*    <NavLink to="/">*/}
-      {/*      Реклама на сайте*/}
-      {/*    </NavLink>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <NavLink to="/">*/}
-      {/*      Добавить заведение*/}
-      {/*    </NavLink>*/}
-      {/*  </li>*/}
-      {/*  <li>*/}
-      {/*    <NavLink to="/">*/}
-      {/*      Обратная свзяь*/}
-      {/*    </NavLink>*/}
-      {/*  </li>*/}
-      {/*</ul>*/}
       <span style={{transform: `scale(${(w * (w < 1000 ? 1 : .9)) / 1080})`}} className={style.hamburger}>
         <Hamburger toggled={open} size={25} toggle={toggleDrawer(!open)}/>
       </span>
