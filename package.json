@@ -8,6 +8,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "bootstrap": "^4.5.3",
+    "formik": "^2.2.5",
     "hamburger-react": "^2.3.0",
     "material-ui": "^0.20.2",
     "node-sass": "4.14.1",
@@ -17,10 +19,12 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-slick": "^0.27.13",
+    "reactstrap": "^8.7.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.0"
   },
   "scripts": {
     "start": "react-scripts start",

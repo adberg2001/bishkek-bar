@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import Departments from "./Departments";
+import Departments from "./Departments/Departments";
 import WIP from "./WIP";
-import DepartmentsCreate from "./Departments-create";
+import DepartmentsCreate from "./Departments/Departments-create";
 
 function Views() {
     return (

@@ -6,7 +6,7 @@ function Title(){
   return (
     <section className={style.mainCont}>
       <h1>
-        Добро пожаловать в The Bish's Bars
+        Добро пожаловать в The Bish's Bar
       </h1>
       <p>Ищешь бар где можно выпить и "потусить", или где можно посидеть выпивая под хорошую музыку?</p>
     </section>
