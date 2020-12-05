@@ -6,29 +6,48 @@ import {TextField, createMuiTheme, ThemeProvider} from "@material-ui/core";
 
 const theme = createMuiTheme({
   overrides: {
-    MuiInputLabel: { // Name of the component ⚛️ / style sheet
-      root: { // Name of the rule
-        height: "5vh",
+    MuiFormGroup:{
+      root: {
+        minHeight: "11.5vh",
+        margin:  "1.5vh 0",
+      }
+    },
+    MuiInputLabel: {
+      root: {
         fontWeight: "600",
+        color: "#fff",
         fontFamily: ['Amatic SC', 'sans-serif'].join(','),
         fontSize: "3vh",
-        "&$focused": { // increase the specificity for the pseudo class
+        "&$focused": {
           color: "#ff5100"
         }
       }
-    }
+    },
+    MuiInputBase: {
+      root: {
+        fontWeight: "600",
+        fontFamily: ['Amatic SC', 'sans-serif'].join(','),
+        fontSize: "3vh",
+        borderBottom: "1px solid #fff",
+        transition: "none",
+      },
+    },
   }
 });
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   input: {
-    height: "3vh",
+    minHeight: "5vh",
+    lineHeight: "4vh",
+    fontSize: "3vh",
+    color: "#fff",
     fontFamily: ['Amatic SC', 'sans-serif'].join(','),
   },
   helperText: {
     height: "3vh",
+    fontSize: "2vh",
     fontFamily: ['Amatic SC', 'sans-serif'].join(','),
-  }
+  },
 }));
 
 function Input({label, as, placeholder, errors, name, ...rest}) {
@@ -38,8 +57,8 @@ function Input({label, as, placeholder, errors, name, ...rest}) {
     <ThemeProvider theme={theme}>
       <FormGroup>
         <Field
-          error={errors['title'] && errors['title'] !== ""}
-          helperText={errors['title']}
+          error={errors[name] && errors[name] !== ""}
+          helperText={errors[name]}
           name={name}
           label={label}
           placeholder={placeholder}
@@ -48,7 +67,7 @@ function Input({label, as, placeholder, errors, name, ...rest}) {
           }}
           InputProps={{
             classes: {
-              input: classes.input,
+              input: classes.input
             },
           }}
           as={TextField}
