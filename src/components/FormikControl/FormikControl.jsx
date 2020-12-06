@@ -4,6 +4,7 @@ import AutoComplete from "./Autocomplete";
 import DynamicInput from "./DynamicInput";
 import MaskedInput from "./MaskedInput";
 import InputUploader from "./InputUploader";
+import Radio from "./Radio";
 
 function FormikControl({ control, ...rest }) {
   switch (control) {
@@ -17,6 +18,8 @@ function FormikControl({ control, ...rest }) {
       return <MaskedInput {...rest}/>
     case 'inputUploader':
       return <InputUploader {...rest}/>
+    case 'radio':
+      return <Radio {...rest}/>
     default:
       return null
   }

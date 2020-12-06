@@ -47,7 +47,9 @@ function DepartmentsCreateComponent() {
     const phone_number = values.phone_number.map(p => {
       return {number: p.number.split(' ').join('')}
     })
-    const data = {...values, phone_number: phone_number};
+    const foodCategory = values.food?.map(f => f.id);
+    const data = {...values, phone_number: phone_number, food: foodCategory};
+    // const {image, ...rest} = data;
     delete data?.image
     request("POST", "/departments/departments/", JSON.stringify(data), "JSON")
       .then(r => r.json())

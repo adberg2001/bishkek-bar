@@ -1,17 +1,18 @@
 import React from "react";
-import { Formik, Form } from 'formik';
+import {Formik, Form} from 'formik';
 import FormikControl from "../../FormikControl/FormikControl";
 import FormikSubmit from "../../FormikControl/FormSubmit";
-function DepartmentsCreateFields({initialValues, createSchema, foodsCategories, submit}){
+
+function DepartmentsCreateFields({initialValues, createSchema, foodsCategories, submit}) {
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={createSchema}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, {setSubmitting}) => {
         submit(values, setSubmitting)
       }}
     >
-      {({values, errors, isSubmitting, setFieldValue, touched})=> (
+      {({values, errors, isSubmitting, setFieldValue, touched}) => (
         <Form>
           <FormikControl
             control="input"
@@ -42,11 +43,14 @@ function DepartmentsCreateFields({initialValues, createSchema, foodsCategories, 
             errors={errors}
           />
           <FormikControl
-            control="input"
-            type="text"
+            control="radio"
             label="Парковка"
             name="parking"
-            errors={errors}
+            setFieldValue={setFieldValue}
+            options={[
+              {value: "F", name: "Бесплатная"},
+              {value: "Not", name: "Оплачиваемая"},
+              {value: "Pay", name: "Без парковки"}]}
           />
           <FormikControl
             control="input"

@@ -1,12 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import style from "./style.module.sass";
 import nos_img from "./assets/nosorog_kg.jpg";
 import pyatsot_odin_img from "./assets/501_kg.jpg";
 import adberg from "./assets/adberg.jpg";
 import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {fetchDepartments} from "./actions";
 
 function Departments(){
-
+  const dispatch = useDispatch();
+  useEffect(()=> {
+    dispatch(fetchDepartments("GET", null, '/departments/departments/'))
+  }, [dispatch])
   const departmments = [
     {id: "nosorog_kg", img: nos_img, title: "Nosorog", address: "ул. Токомбаева, 21А/4, уг. ул. Куттубаева", check: "1000–1200", phone:["+996(552)11-14-44", "+996(552)11-14-44"]},
     {id: "501_kg", img: pyatsot_odin_img, title: "501", address: "ул. Тимирязева, 78, уг. ул. Киевская", check: "800–1000", phone:["+996(501)50-15-01"]},

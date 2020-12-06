@@ -32,6 +32,23 @@ export const theme = createMuiTheme({
         transition: "none",
       },
     },
+    MuiSelect: {
+      root: {
+        minHeight: "4vh",
+      },
+    },
+    MuiButtonBase: {
+      root: {
+        fontWeight: "600",
+        fontFamily: ['Amatic SC', 'sans-serif'].join(','),
+        fontSize: "3vh",
+        borderBottom: "1px solid #fff",
+        transition: "none",
+        "&$focused": {
+          color: "#ff5100"
+        },
+      },
+    },
     MuiChip: {
       root: {
         minHeight: "3vh",
