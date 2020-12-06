@@ -1,9 +1,10 @@
-export default function request(method, url, data) {
+export default function request(method, url, data, type) {
   const endpoint = 'https://pub-bishkek.herokuapp.com/api'
 
   const myHeaders = new Headers();
+  console.log(data)
   // const token = localStorage.getItem("token");
-  myHeaders.append("Content-Type",  `application/json`);
+  type === "JSON" && myHeaders.append("Content-Type",  `application/json`)
   // token && myHeaders.append("Authorization",  `Bearer ${token}`);
 
   const requestOptions = {

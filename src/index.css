@@ -42,3 +42,10 @@ input::placeholder {
 ::-webkit-scrollbar-thumb:hover {
   background: #ff6600;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #ffffff
+}

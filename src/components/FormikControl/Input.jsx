@@ -6,14 +6,15 @@ import {TextField, createMuiTheme, ThemeProvider} from "@material-ui/core";
 
 const theme = createMuiTheme({
   overrides: {
-    MuiFormGroup:{
+    MuiFormGroup: {
       root: {
         minHeight: "11.5vh",
-        margin:  "1.5vh 0",
+        margin: "1.5vh 0",
       }
     },
     MuiInputLabel: {
       root: {
+        minHeight: "4vh",
         fontWeight: "600",
         color: "#fff",
         fontFamily: ['Amatic SC', 'sans-serif'].join(','),
@@ -43,6 +44,12 @@ const useStyles = makeStyles(() => ({
     color: "#fff",
     fontFamily: ['Amatic SC', 'sans-serif'].join(','),
   },
+  "&:-webkit-autofill": {
+    // WebkitBoxShadow: "0 0 0 1000px black inset",
+    WebkitTextFillColor: "#fff",
+    transition: "background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s",
+    transitionDelay: "background-color 5000s, color 5000s",
+  },
   helperText: {
     height: "3vh",
     fontSize: "2vh",
@@ -62,6 +69,7 @@ function Input({label, as, placeholder, errors, name, ...rest}) {
           name={name}
           label={label}
           placeholder={placeholder}
+          autocomplete={false}
           FormHelperTextProps={{
             className: classes.helperText
           }}

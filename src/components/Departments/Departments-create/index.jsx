@@ -1,18 +1,19 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import style from "./style.module.sass"
 import MainWrapper from "../../MainWrapper";
 import * as Yup from 'yup';
 import DepartmentsCreateFields from "./Fields";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchFoodCategories} from "../../Foods/Categories/actions";
+import request from "../../../request/request";
 
-function DepartmentsCreateComponent(){
+function DepartmentsCreateComponent() {
 
   const dispatch = useDispatch()
 
   const foodsCategories = useSelector(state => state.foodsCategories.foodCategories)
 
-  useEffect(()=> {
+  useEffect(() => {
     dispatch(fetchFoodCategories("GET", null, "/foods/foodcategory/"))
   }, [dispatch])
 
@@ -23,6 +24,7 @@ function DepartmentsCreateComponent(){
     seats: "",
     parking: "",
     music: "",
+    image: null,
     facebook_profile: "",
     insta_profile: "",
     web_profile: "",
@@ -35,15 +37,39 @@ function DepartmentsCreateComponent(){
   const createSchema = Yup.object().shape({
     title: withoutShortSchema,
     location: withShortSchema,
-    parking: withShortSchema,
+    parking: withoutShortSchema,
     music: withShortSchema,
+    check: withoutShortSchema,
+    seats: withoutShortSchema,
   });
+
+  function submit(values, setSubmitting) {
+    const phone_number = values.phone_number.map(p => {
+      return {number: p.number.split(' ').join('')}
+    })
+    const data = {...values, phone_number: phone_number};
+    delete data?.image
+    request("POST", "/departments/departments/", JSON.stringify(data), "JSON")
+      .then(r => r.json())
+      .then(j => {
+        if (values.image) {
+          const formData = new FormData();
+          formData.append("image", values.image, values.image.name)
+          request("PATCH", `/departments/departments/${j.id}/`, formData).then(r => r.json()).then(j => console.log(j))
+        }
+      })
+    setSubmitting(false)
+  }
 
   return (
     <MainWrapper>
       <div className={style.mainCont}>
         <h2>Добавление заведения</h2>
-        <DepartmentsCreateFields initialValues={initialValues} createSchema={createSchema} foodsCategories={foodsCategories}/>
+        <DepartmentsCreateFields
+          initialValues={initialValues}
+          createSchema={createSchema}
+          foodsCategories={foodsCategories}
+          submit={submit}/>
       </div>
     </MainWrapper>
   )
